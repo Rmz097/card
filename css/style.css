@@ -1,0 +1,184 @@
+/* 1. Reset y Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* Fondo neutral para resaltar la tarjeta */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* 2. Contenedor de la Tarjeta Vertical */
+.card-vertical {
+  width: 320px;
+  height: 520px;
+  background-color: #ff7e7e; /* El tono coral/rosa de Ualá */
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* 3. La Curva Blanca Inferior */
+.white-curve {
+  position: absolute;
+  width: 180%;
+  height: 50%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  bottom: -8%;
+  left: -40%;
+  z-index: 1;
+}
+
+/* 4. Contenido General */
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 25px;
+}
+
+/* 5. Chip y Contactless (Parte Superior) */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px; /* Espacio antes de los datos del usuario */
+}
+
+.chip {
+  width: 55px;
+  height: 42px;
+  background: linear-gradient(135deg, #e0e0e0 0%, #a8a8a8 100%);
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Líneas internas del chip para realismo */
+.chip-inner {
+  width: 18px;
+  height: 22px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.chip-line {
+  position: absolute;
+  background: rgba(0,0,0,0.1);
+}
+.chip-line:nth-child(1) { width: 100%; height: 1px; top: 50%; }
+.chip-line:nth-child(2) { width: 1px; height: 100%; left: 33%; }
+.chip-line:nth-child(3) { width: 1px; height: 100%; left: 66%; }
+
+.contactless-icon {
+  width: 25px;
+  height: 25px;
+  opacity: 0.9;
+}
+
+/* 6. Datos del Usuario (Debajo del Chip) */
+.user-data {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: auto; /* Empuja el resto hacia la base blanca */
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-name {
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  font-style: italic;
+}
+
+.clabe-text {
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.clabe-text .clabe{
+  font-weight: bolder;
+}
+
+/* Estilo solicitado: Letras pequeñas y grisáceas (blanco con opacidad) */
+.copy-icon {
+  color: rgba(255, 255, 255, 0.6); 
+  font-size: 0.62rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  min-width: 60px;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+.copy-icon:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* 7. Logos Inferiores (Sobre la curva blanca) */
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.uala-brand img {
+  width: 110px; /* Logo oficial */
+  height: auto;
+}
+
+.mastercard-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.debit-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  text-transform: lowercase;
+}
+
+.mastercard-logo {
+  position: relative;
+  width: 45px;
+  height: 28px;
+}
+
+.circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+}
+.circle.red { background-color: #eb001b; left: 0; }
+.circle.yellow { background-color: #f79e1b; right: 0; opacity: 0.85; }
