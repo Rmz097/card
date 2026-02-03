@@ -36,15 +36,16 @@
       </div>
       
       <div class="data-row">
-        <span class="clabe-text"><span class="clabe">CLABE:</span>1385 8000 0016 6559 41</span>
+        <span class="clabe-text">CLABE: 1385 8000 0016 6559 41</span>
         <span class="copy-icon" data-text="138580000016655941">COPIAR</span>
       </div>
     </div>
 
     <div class="bottom-row">
       <div class="uala-brand">
-        <img src="./img/Uala-logo.png" alt="Ualá">
+        <img src="https://www.temenos.com/wp-content/uploads/2024/10/Uala-Case-study-logo.png" alt="Ualá">
       </div>
+      
       <div class="mastercard-group">
         <span class="debit-text">débito</span>
         <div class="mastercard-logo">
@@ -62,10 +63,10 @@
       const textToCopy = this.getAttribute("data-text");
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = this.textContent;
-        this.textContent =  "¡COPIADO!"; 
+        this.textContent = "COPIADO";
         setTimeout(() => {
           this.textContent = originalText;
-        }, 10000);
+        }, 1000);
       });
     });
   });
